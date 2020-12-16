@@ -1,27 +1,10 @@
-# Pokemon
+Consumindo API Nomes - Site IBGE:
+https://servicodados.ibge.gov.br/api/docs/nomes?versao=2#api-Nomes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Frequência por nome:
+Obtém a frequência de nascimentos por década para o nome consultado
+https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ranking por frequência:
+Obtém o ranking dos nomes segundo a frequência de nascimentos por década
+https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking
