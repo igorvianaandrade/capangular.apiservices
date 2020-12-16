@@ -1,39 +1,46 @@
-<div>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
-    <input name="nome" #nome="ngModel" ngModel required><br>
-    <span *ngIf="error" style="color:red;">{{errorMessage}}<br></span>
-    <input type="submit" value="Obter Ranking">
-  </form>
-</div>
-
-<br><br>
-
-<h1>Dados do Ranking: Frequência por nome</h1>
-
-<div>
-  <div>    
-    <label for="nome">Nome: {{rankingFrequencia[0]?.nome}}</label><br>
-  </div>  
-  <div>    
-    <label for="nome">Sexo: {{rankingFrequencia[0]?.sexo}}</label><br>
+<div class="container">
+  <div class="row">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+      <div class="row">
+        <div class="col-sm">  
+          <label for="nome">Nome:</label><br>   
+          <input name="nome" #nome="ngModel" ngModel required placeholder="Preenchar o nome"><br>
+        </div>
+      </div>
+      <div class="row">        
+        <input type="submit" value="Obter Ranking">
+      </div>
+      <div class="row">        
+        <span *ngIf="error" style="color:red;">{{errorMessage}}<br></span><br>      
+      </div>
+    </form>
   </div>
-  <div>    
-    <label for="nome">Localidade: {{rankingFrequencia[0]?.localidade}}</label><br>
-  </div>
- 
-  <div class="table-striped">
-    <table class="table" border="1">
-        <tr>
-          <td><b>Período</b></td>
-          <td><b>Frequência</b></td>                    
-        </tr>
+<br>
+  <div class="row">
+    <h1>Frequência por nome</h1>
+    <h5>Obtém a frequência de nascimentos por década para o nome consultado</h5>
+      <br>
+        <div>    
+          <label for="nome">Nome: {{rankingFrequencia[0]?.nome}}</label><br>
+        </div>  
+        <div>    
+          <label for="nome">Sexo: {{rankingFrequencia[0]?.sexo}}</label><br>
+        </div>
+        <div>    
+          <label for="nome">Localidade: {{rankingFrequencia[0]?.localidade}}</label><br>
+        </div>
       
-        <tr *ngFor="let item of rankingFrequencia[0]?.res">
-          <td>{{item.periodo}}</td>       
-          <td>{{item.frequencia}}</td>
-        </tr>
-
-      </table>
-</div>
-
+        <div class="table-striped">
+          <table class="table" border="1">
+              <tr>
+                <td><b>Período</b></td>
+                <td><b>Frequência</b></td>                    
+              </tr>        
+              <tr *ngFor="let item of rankingFrequencia[0]?.res">
+                <td>{{item.periodo}}</td>       
+                <td>{{item.frequencia}}</td>
+              </tr>
+          </table>
+       </div>
+  </div>
 </div>

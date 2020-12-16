@@ -10,7 +10,7 @@ import { RankingService } from './services/ranking.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {  
-
+  
   title = 'ranking';
   rankingFrequencia:RankingFrequencia[] = [];
   error:boolean = false;
