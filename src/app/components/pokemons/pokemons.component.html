@@ -1,0 +1,38 @@
+<div>
+  <table border="1">
+    <tr style="font-weight: bold;">
+      <td>
+        Nome
+      </td>
+      <td>
+        Peso
+      </td>
+      <td>
+        Altura
+      </td>
+      <td>
+        Frente
+      </td>
+      <td>
+        Costas
+      </td>
+    </tr>
+    <tr *ngFor="let pokemon of pokemonList.results">
+      <td>
+        {{pokemon.name}}
+      </td>
+      <td>
+        {{pokemon.pokemon.height}}
+      </td>
+      <td>
+        {{pokemon.pokemon.weight}}
+      </td>
+      <td>
+        <img [src]="pokemon.pokemon.sprites?.front_default"><br>
+      </td>
+      <td>
+        <img [src]="pokemon.pokemon.sprites?.back_default"><br>
+      </td>
+    </tr>
+  </table>
+</div>
