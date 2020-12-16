@@ -1,13 +1,11 @@
-export interface Re {
+export interface ResultadosRF {
     periodo: string;
     frequencia: number;
 }
 
 export interface RankingFrequencia {
-    localidade?: string;
-    nome?: string;
-    res?: Re[];
+    nome?: string;    
     sexo?: any;
-    
-    
+    localidade?: string;    
+    res?: ResultadosRF[];    
 }

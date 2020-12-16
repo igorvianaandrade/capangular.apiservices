@@ -8,11 +8,32 @@
 
 <br><br>
 
-<h1>Dados do Ranking</h1>
+<h1>Dados do Ranking: Frequência por nome</h1>
 
 <div>
-  <div>
-    <p>Nome: {{rankingFrequencia[0]?.nome}}</p>    
+  <div>    
+    <label for="nome">Nome: {{rankingFrequencia[0]?.nome}}</label><br>
   </div>  
-  
+  <div>    
+    <label for="nome">Sexo: {{rankingFrequencia[0]?.sexo}}</label><br>
+  </div>
+  <div>    
+    <label for="nome">Localidade: {{rankingFrequencia[0]?.localidade}}</label><br>
+  </div>
+ 
+  <div class="table-striped">
+    <table class="table" border="1">
+        <tr>
+          <td><b>Período</b></td>
+          <td><b>Frequência</b></td>                    
+        </tr>
+      
+        <tr *ngFor="let item of rankingFrequencia[0]?.res">
+          <td>{{item.periodo}}</td>       
+          <td>{{item.frequencia}}</td>
+        </tr>
+
+      </table>
+</div>
+
 </div>
