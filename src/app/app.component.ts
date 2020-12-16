@@ -1,43 +1,42 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Pokemon } from './models/pokemon.model';
-import { PokemonService } from './services/pokemon.service';
+import { RankingFrequencia } from './models/ranking.model';
+import { RankingService } from './services/ranking.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'pokemon';
-  pokemon:Pokemon = {};
+export class AppComponent {  
+
+  title = 'ranking';
+  rankingFrequencia:RankingFrequencia[] = [];
   error:boolean = false;
   errorMessage:string = "";
-
-  constructor(private service:PokemonService) { }
+  
+  constructor(private service:RankingService) { }
 
   onSubmit(form:NgForm){
-    //type Form = { nome:string }
-    //let formValue:Form = form.value;
-
+    
+    //Ranking Frequência por nome ibge
     if (form.valid){
-      this.service.getPokemon(form.value.nome)
+      this.service.getRanking(form.value.nome)
       .subscribe((response:any) => {
         this.error = false;
-        this.pokemon = response;
-        console.log(this.pokemon);
+        this.rankingFrequencia = response;
+        console.log(this.rankingFrequencia);
       }, (error:HttpErrorResponse) => {
         if (error.status == 404) {
           this.error = true;
-          this.errorMessage = "Pokémon não encontrado";
+          this.errorMessage = "Ranking não encontrado";
         }
       });
     } else {
       this.error = true;
-      this.errorMessage = "Nome do Pokémon não informado";
+      this.errorMessage = "Nome do Ranking não informado";
     }
-
 
   }
 

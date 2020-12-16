@@ -2,32 +2,17 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
     <input name="nome" #nome="ngModel" ngModel required><br>
     <span *ngIf="error" style="color:red;">{{errorMessage}}<br></span>
-    <input type="submit" value="Obter Pokémon">
+    <input type="submit" value="Obter Ranking">
   </form>
 </div>
 
 <br><br>
 
-<h1>Dados do Pokémon</h1>
+<h1>Dados do Ranking</h1>
 
 <div>
   <div>
-    <label for="nome">Nome: </label> {{pokemon.name}}
-  </div>
-  <div>
-    <label for="nome">Altura: </label> {{pokemon.height}}
-  </div>
-  <div>
-    <label for="nome">Peso: </label> {{pokemon.weight}}
-  </div>
-
-  <div>
-    <label for="imagens">Imagens:</label><br>
-    <img [src]="pokemon.sprites?.front_default" style="width: 250px;"><br>
-    <img [src]="pokemon.sprites?.back_default" style="width: 250px;">
-  </div>
+    <p>Nome: {{rankingFrequencia[0]?.nome}}</p>    
+  </div>  
+  
 </div>
-
-<br><br>
-
-<app-pokemons></app-pokemons>
