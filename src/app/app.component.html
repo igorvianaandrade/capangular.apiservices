@@ -15,8 +15,34 @@
       </div>
     </form>
   </div>
-<br>
+  <br>
   <div class="row">
+    <h1>Campeonato por nome</h1>  
+      <br>
+        <div>    
+          <label for="nome">Nome: {{campeonato?.nome}}</label><br>
+        </div>  
+        
+        <!--<div class="table-striped">
+          <table class="table" border="1">
+              <tr>
+                <td><b>Edição atual</b></td>
+                <td><b>Frequência</b></td>                    
+              </tr>        
+              <tr *ngFor="let item of rankingFrequencia[0]?.res">
+                <td>{{item.periodo}}</td>       
+                <td>{{item.frequencia}}</td>
+              </tr>
+          </table>
+      </div>-->
+  </div>
+
+
+<br><br><br>
+<app-campeonato></app-campeonato>
+</div>
+
+<!--<div class="row">
     <h1>Frequência por nome</h1>
     <h5>Obtém a frequência de nascimentos por década para o nome consultado</h5>
       <br>
@@ -43,4 +69,4 @@
           </table>
        </div>
   </div>
-</div>
+</div>-->

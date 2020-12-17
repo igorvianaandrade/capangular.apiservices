@@ -1,0 +1,20 @@
+<div>
+  <table border="1">
+    <tr style="font-weight: bold;">
+      <td>
+        Nome
+      </td>      
+      <td>
+        Tipo
+      </td> 
+    </tr>
+    <tr *ngFor="let campeonato of campeonatos">
+      <td>
+        {{campeonato.nome}}
+      </td>
+      <td>
+        {{campeonato.tipo}}
+      </td>
+    </tr>
+  </table>
+</div>

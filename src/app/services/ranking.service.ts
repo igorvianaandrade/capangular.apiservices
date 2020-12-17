@@ -18,7 +18,10 @@ export class RankingService {
   }
 
   //Ranking por frequência: Obtém o ranking dos nomes segundo a frequência de nascimentos por década
-  getAllRankings(): Observable<RankingFrequenciaList>{
-    return this.http.get<RankingFrequenciaList>(apiURL + "censos/nomes/");
+  getAllRankings(): Observable<RankingFrequenciaList[]>{
+    return this.http.get<RankingFrequenciaList[]>(apiURL + "censos/nomes/");
   }
+
+  //test_d2c1dfd49ffd97d140444a05ee9f5c
+  
 }
